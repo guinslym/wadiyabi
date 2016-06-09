@@ -19,6 +19,10 @@ stripe==1.35.0
 mock==2.0.0
 flake8
 
+#other
+Fabric
+Sphinx
+
 #important
 #use this versions
 pytest-cov==2.1.0
