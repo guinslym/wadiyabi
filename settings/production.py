@@ -16,8 +16,6 @@ INSTALLED_APPS = BASE_APPS + (
     'applications.delivrem',
 )
 
-
-
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -72,17 +70,17 @@ LOGGING = {
              'level':'INFO',
              'propagate': True,
          },
-         'applications.emplois.views': {
+         'applications.delivrem.views': {
              'handlers': ['file'],
              'level':'INFO',
              'propagate': True,
          },
-         'applications.emplois.utils': {
+         'applications.delivrem.utils': {
              'handlers': ['file'],
              'level':'INFO',
              'propagate': True,
          },
-         'applications.emplois.tweets': {
+         'applications.delivrem.tweets': {
              'handlers': ['file'],
              'level':'INFO',
              'propagate': True,
