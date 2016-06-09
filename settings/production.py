@@ -8,22 +8,14 @@ TEMPLATE_DEBUG_MODE = False
 
 SECRET_KEY = 'p-o33iwrvc0+3e%m9)8(b(lj3240lwih^u=7p%p+o$ln$^493k2n'
 
-INSTALLED_APPS = (
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.sites',
-    'django.contrib.staticfiles',
-    'django.contrib.humanize',
-    'django_extensions',
+INSTALLED_APPS = BASE_APPS + (
     'rest_framework',
     'MySQLdb',
     'bootstrap_pagination',
     #applications
-    'applications.emplois',
+    'applications.delivrem',
 )
+
 
 
 MIDDLEWARE_CLASSES = (
