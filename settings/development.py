@@ -4,7 +4,8 @@ from .base import *
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = 'p-h93iwrvc0+3e%m9)8(b(ml1clqwih^u=7p%p+o$ln$^458kn'
-
+INTERNAL_IPS = ('127.0.0.1',)
+SITE_ID=1
 DEBUG=True
 TEMPLATE_DEBUG_MODE = True
 
