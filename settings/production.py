@@ -2,19 +2,13 @@ import os
 
 from .base import *
 
+SECRET_KEY = 'p-o33iwrvc0+3e%m9)8(b(lj3240lwih^u=7p%p+o$ln$^493k2n'
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEBUG = False
 TEMPLATE_DEBUG_MODE = False
 
-SECRET_KEY = 'p-o33iwrvc0+3e%m9)8(b(lj3240lwih^u=7p%p+o$ln$^493k2n'
 
-INSTALLED_APPS = BASE_APPS + (
-    'rest_framework',
-    'MySQLdb',
-    'bootstrap_pagination',
-    #applications
-    'applications.delivrem',
-)
+INSTALLED_APPS = BASE_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
