@@ -8,14 +8,16 @@ from django.utils import timezone
 from django.core.validators import MinLengthValidator, RegexValidator
 from django.conf import settings
 from basis.models import TimeStampModel
+import datetime
+from django.utils import timezone
 # Create your models here.
 '''
  ☐ User
    ☐ **Product (Image)
-     ☐ **Comment
+     ☐ **Comment#
      ☐ **Like
-     ☐ **Purchase
      ☐ **Repost
+ ☐ **Follow
 '''
 
 class Product(TimeStampModel):
@@ -25,7 +27,7 @@ class Product(TimeStampModel):
                             null=False, blank=False)
     slug = models.CharField(max_length=220, null=True, blank=True)
     showoff = models.CharField(max_length=440, null=True, blank=True)
-    price = models.DecimalField(max_digits=16, decimal_places=2, null=True, blank=True)
+    price = models.DecimalField(max_digits=16, decimal_places=2, default=0, null=True, blank=True)
     activated = models.BooleanField(default=False)
     #did this product have been sale
     sale = models.BooleanField(default=False)
@@ -36,3 +38,23 @@ class Product(TimeStampModel):
 class Zin(TimeStampModel):
     author = models.ForeignKey(settings.AUTH_USER_MODEL)
     comment = models.CharField(max_length=220, null=False, blank=False)
+
+class UserProfile(models.Model):
+    genderChoice = ( ('M','Male') , ('F','Female')) # adding choicefield for gender
+
+    user = models.OneToOneField(User)
+    activation_key = models.CharField(max_length=40, blank=True)
+    key_expires = models.DateTimeField(auto_now=True)
+    profilePic = models.FileField(upload_to='media/profile/',default='media/profile/banners-analysis-sketch.jpg',null=True)
+    dob = models.DateField(blank=True, null = True)
+    gender=models.CharField(max_length=10,choices=genderChoice)
+    homeTown=models.CharField(max_length=50,blank=True)
+    currentPlace=models.CharField(max_length=50,blank=True)
+    lastUpdated=models.DateField(auto_now=True)
+
+
+    def __str__(self):
+        return self.user.username
+
+    class Meta:
+        verbose_name_plural=u'User profiles'
