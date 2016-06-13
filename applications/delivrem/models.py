@@ -40,9 +40,9 @@ class Zin(TimeStampModel):
     comment = models.CharField(max_length=220, null=False, blank=False)
 
 class UserProfile(models.Model):
+    user = models.OneToOneField(settings.AUTH_USER_MODEL)
     genderChoice = ( ('M','Male') , ('F','Female')) # adding choicefield for gender
 
-    user = models.OneToOneField(User)
     activation_key = models.CharField(max_length=40, blank=True)
     key_expires = models.DateTimeField(auto_now=True)
     profilePic = models.FileField(upload_to='media/profile/',default='media/profile/banners-analysis-sketch.jpg',null=True)
@@ -52,9 +52,10 @@ class UserProfile(models.Model):
     currentPlace=models.CharField(max_length=50,blank=True)
     lastUpdated=models.DateField(auto_now=True)
 
-
+    '''
     def __str__(self):
         return self.user.username
+    '''
 
     class Meta:
         verbose_name_plural=u'User profiles'
