@@ -5,6 +5,12 @@ if 'guinsly' in socket.gethostname():
     from .development import *
     print('--dev--settings--')
 else:
-    from .production import *
+    try:
+        from .production import *
+    except:
+        print("-"*18)
+        print("\tPlease rename the file check this file")
+        print("\tsettings/dispatch")
+        print("\tfor guidance")
     #print('prod--settings')
 #this file won't be load in git and in the
