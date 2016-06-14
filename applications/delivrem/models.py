@@ -39,14 +39,12 @@ class Zin(TimeStampModel):
     author = models.ForeignKey(settings.AUTH_USER_MODEL)
     comment = models.CharField(max_length=220, null=False, blank=False)
 
-class UserProfile(models.Model):
+class Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL)
     genderChoice = ( ('M','Male') , ('F','Female')) # adding choicefield for gender
-
     activation_key = models.CharField(max_length=40, blank=True)
     key_expires = models.DateTimeField(auto_now=True)
-    profilePic = models.FileField(upload_to='media/profile/',default='media/profile/banners-analysis-sketch.jpg',null=True)
-    dob = models.DateField(blank=True, null = True)
+    profilePic = models.FileField(upload_to='profile/',default='profile/egg.jpg',null=True)
     gender=models.CharField(max_length=10,choices=genderChoice)
     homeTown=models.CharField(max_length=50,blank=True)
     currentPlace=models.CharField(max_length=50,blank=True)
