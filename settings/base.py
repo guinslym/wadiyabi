@@ -46,12 +46,11 @@ BASE_APPS =  (
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'django_extensions',
-    'friendship',
 )
 THIRD_PARTY_APPS =  (
     'rest_framework',
-    'MySQLdb',
     'bootstrap_pagination',
+    'friendship',
 )
 LOCAL_APPS = (
     'applications.delivrem',
