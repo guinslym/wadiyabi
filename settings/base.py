@@ -53,6 +53,7 @@ THIRD_PARTY_APPS =  (
     'friendship',
 )
 LOCAL_APPS = (
+    'applications.account',
     'applications.delivrem',
 )
 
