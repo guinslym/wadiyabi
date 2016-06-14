@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 WSGI_APPLICATION = 'wadiyabi.wsgi.application'
 ROOT_URLCONF = 'wadiyabi.urls'
+SITE_ID=1
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import logging
@@ -51,6 +52,7 @@ THIRD_PARTY_APPS =  (
     'rest_framework',
     'bootstrap_pagination',
     'friendship',
+    'social.apps.django_app.default',
 )
 LOCAL_APPS = (
     'applications.account',
@@ -160,16 +162,16 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
-    #'applications.account.authentication.EmailAuthBackend',
+    'applications.account.authentication.EmailAuthBackend',
 )
 
 
 
 
 from django.core.urlresolvers import reverse_lazy
-#LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
-#LOGIN_URL = reverse_lazy('login')
-#LOGOUT_URL = reverse_lazy('logout')
+LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
+LOGIN_URL = reverse_lazy('login')
+LOGOUT_URL = reverse_lazy('logout')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
