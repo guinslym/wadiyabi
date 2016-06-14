@@ -39,6 +39,7 @@ class Zin(TimeStampModel):
     author = models.ForeignKey(settings.AUTH_USER_MODEL)
     comment = models.CharField(max_length=220, null=False, blank=False)
 
+"""
 class Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL)
     genderChoice = ( ('M','Male') , ('F','Female')) # adding choicefield for gender
@@ -50,10 +51,9 @@ class Profile(models.Model):
     currentPlace=models.CharField(max_length=50,blank=True)
     lastUpdated=models.DateField(auto_now=True)
 
-    '''
     def __str__(self):
         return self.user.username
-    '''
 
     class Meta:
         verbose_name_plural=u'User profiles'
+"""
