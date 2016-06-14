@@ -10,9 +10,8 @@ from applications.delivrem import views
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('applications.delivrem.urls')),
-    url(r'^account/', include('applications.account.urls', namespace="account")),
+    url(r'^account/', include('applications.account.urls')),
     url('social-auth/',include('social.apps.django_app.urls', namespace='social')),
-    #url(r'^', include('applications.account.urls')),
 ]
 #Static files serves with WhiteNoise (pip install WhiteNoise)
 #urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

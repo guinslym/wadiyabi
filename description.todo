@@ -19,4 +19,14 @@ interesting:
   ☐ Check Behave as Instagram Redesign ... or Fb redesign
 
 todo:
- ☐ Find again on the internet with Django-allauth how does users uses this 
+ ✔ Find again on the internet with Django-allauth how does users uses this  @done(2016-06-14 19:37) @project(todo)
+✔ I was able to set the authentication system @done(2016-06-14 19:38)
+☐ Now I need to make sure that every routes in Account has a namespace (templates/*)
+☐ Test it with the app to see if I can create a user and login
+☐ Do the same with 'from my travel'
+☐ Tests.. mixer and django-tests-plus
+☐ in Falardeau I should take the .gitignore
+
+Authentication:
+☐ http://localhost:8004/account/logout/ looks funny check to see if I can redesign the template
+☐ http://localhost:8004/account/logout-then-login/ doesn't work 
