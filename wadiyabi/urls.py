@@ -10,7 +10,7 @@ from applications.delivrem import views
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('applications.delivrem.urls')),
-    url(r'^', include('applications.account.urls')),
+    #url(r'^', include('applications.account.urls')),
 ]
 #Static files serves with WhiteNoise (pip install WhiteNoise)
 #urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

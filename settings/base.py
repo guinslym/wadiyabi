@@ -53,7 +53,7 @@ THIRD_PARTY_APPS =  (
     'friendship',
 )
 LOCAL_APPS = (
-    'applications.account',
+    #'applications.account',
     'applications.delivrem',
 )
 
@@ -155,8 +155,3 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    'django.contrib.auth.backends.RemoteUserBackend',
-)
