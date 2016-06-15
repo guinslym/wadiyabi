@@ -25,7 +25,7 @@ todo:
 ✔ Creating a user (book2,jason) @done(2016-06-14 19:51)
 ✔ Test it with the app to see if I can create a user and login @done(2016-06-14 19:52)
 ✔ Do the same with 'sugbox' @done (16-06-14 20:43)
-☐ Know what my application should do
+✔ Know what my application should do @done(2016-06-15 01:09)
 ☐ Tests.. mixer and django-tests-plus
 ☐ By concrete finish an APP
 ☐ Add logs for login user
@@ -34,7 +34,7 @@ todo:
 ☐ in Falardeau I should take the .gitignore
 ☐ Django RestFramework to study
 ☐ Finish with the tutorial (1hr30)
-☐ Ohmy404 
+☐ Ohmy404
 
 Authentication:
 ☐ http://localhost:8004/account/logout/ looks funny check to see if I can redesign the template
