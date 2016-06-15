@@ -21,12 +21,25 @@ interesting:
 todo:
  ✔ Find again on the internet with Django-allauth how does users uses this  @done(2016-06-14 19:37) @project(todo)
 ✔ I was able to set the authentication system @done(2016-06-14 19:38)
-☐ Now I need to make sure that every routes in Account has a namespace (templates/*)
-☐ Test it with the app to see if I can create a user and login
-☐ Do the same with 'from my travel'
+✔ Now I need to make sure that every routes in Account has a namespace (templates/*) @done(2016-06-14 19:50)
+✔ Creating a user (book2,jason) @done(2016-06-14 19:51)
+✔ Test it with the app to see if I can create a user and login @done(2016-06-14 19:52)
+✔ Do the same with 'sugbox' @done (16-06-14 20:43)
+☐ Know what my application should do
 ☐ Tests.. mixer and django-tests-plus
+☐ By concrete finish an APP
+☐ Add logs for login user
+☐ Change the template
+☐ Test social auth user with fb or twitter
 ☐ in Falardeau I should take the .gitignore
+☐ Django RestFramework to study
+☐ Finish with the tutorial (1hr30)
+☐ Ohmy404 
 
 Authentication:
 ☐ http://localhost:8004/account/logout/ looks funny check to see if I can redesign the template
-☐ http://localhost:8004/account/logout-then-login/ doesn't work 
+☐ http://localhost:8004/account/logout-then-login/ doesn't work
+
+
+Extra:
+ ☐ I would like to use django-registration-redux instead of my clumsy app account. I will try with Falardeau
