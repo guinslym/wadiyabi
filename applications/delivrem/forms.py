@@ -11,9 +11,20 @@ class ContactForm(forms.Form):
         pass
 
 class ProductForm(ModelForm):
-    # I might get an error saying that Django can't
-    # find the template widget.html for captcha
-    #captcha = ReCaptchaField(attrs={'theme' : 'clean'})
+    showoff = forms.CharField(
+        label="showoff",
+        max_length=200,
+        required=True,
+        widget=forms.TextInput(attrs={
+            'placeholder': 'whadiyabi',
+            'class': 'form-control',
+        }))
+    photo = forms.ImageField(
+        label="Photo",
+        required=True,
+        widget=forms.FileInput(attrs={
+            'class': 'form-control',
+        }))
     class Meta:
         model = Product
-        fields = ['photo','showoff']
+        fields = ['showoff', 'photo']
