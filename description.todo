@@ -26,7 +26,10 @@ todo:
 ✔ Test it with the app to see if I can create a user and login @done(2016-06-14 19:52)
 ✔ Do the same with 'sugbox' @done (16-06-14 20:43)
 ✔ Know what my application should do @done(2016-06-15 01:09)
-☐ Tests.. mixer and django-tests-plus
+✔ Tests.. mixer and django-tests-plus @done (16-06-16 00:20)
+☐ Find a subject for the talk --- 
+☐ Yoruba
+☐ TExt Emmanuel
 ☐ By concrete finish an APP
 ☐ Add logs for login user
 ☐ Change the template
