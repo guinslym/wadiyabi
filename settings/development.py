@@ -12,7 +12,7 @@ DEV_APPS = (
     'debug_toolbar',
 )
 INSTALLED_APPS = BASE_APPS + DEV_APPS + THIRD_PARTY_APPS + LOCAL_APPS
-
+INTERNAL_IPS = ['127.0.0.1', '::1',]
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

@@ -1,4 +1,4 @@
-..from .development import *
+from .development import *
 
 DATABASES = {
     'default': {

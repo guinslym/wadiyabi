@@ -27,7 +27,7 @@ todo:
 ✔ Do the same with 'sugbox' @done (16-06-14 20:43)
 ✔ Know what my application should do @done(2016-06-15 01:09)
 ✔ Tests.. mixer and django-tests-plus @done (16-06-16 00:20)
-☐ Find a subject for the talk --- 
+☐ Find a subject for the talk ---
 ☐ Yoruba
 ☐ TExt Emmanuel
 ☐ By concrete finish an APP
@@ -37,12 +37,13 @@ todo:
 ☐ in Falardeau I should take the .gitignore
 ☐ Django RestFramework to study
 ☐ Finish with the tutorial (1hr30)
-☐ Ohmy404
 
 Authentication:
 ☐ http://localhost:8004/account/logout/ looks funny check to see if I can redesign the template
 ☐ http://localhost:8004/account/logout-then-login/ doesn't work
 
+helper:
+  ☐ https://github.com/dopeboy/django-react-redux-jwt-heroku-boilerplate for accounts api
 
 Extra:
  ☐ I would like to use django-registration-redux instead of my clumsy app account. I will try with Falardeau
