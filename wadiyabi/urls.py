@@ -8,7 +8,7 @@ from applications.delivrem import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include('applications.delivrem.urls')),
+    url(r'^', include('applications.delivrem.urls', namespace='delivrem')),
     url(r'^account/', include('applications.account.urls')),
     url('social-auth/',include('social.apps.django_app.urls', namespace='social')),
 ]

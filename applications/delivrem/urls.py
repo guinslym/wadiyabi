@@ -7,7 +7,8 @@ from django.conf.urls import url, include, handler404, handler500
 from applications.delivrem import views
 
 urlpatterns = [
-    url(r'^$', views.hello, name='hello'),
+    #url(r'^$', views.hello, name='hello'),
+    url(r'^$', views.HomeView.as_view(), name='home'),
 ]
 #Static files serves with WhiteNoise (pip install WhiteNoise)
 #urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
