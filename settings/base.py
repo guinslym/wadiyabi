@@ -53,10 +53,14 @@ THIRD_PARTY_APPS =  (
     'bootstrap_pagination',
     'friendship',
     'social.apps.django_app.default',
+    'crispy_forms',
+    'markdown_deux',
+    'pagedown',
 )
 LOCAL_APPS = (
     'applications.account',
     'applications.delivrem',
+    'applications.comments',
 )
 
 CACHES = {
@@ -175,3 +179,5 @@ LOGOUT_URL = reverse_lazy('logout')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+CRISPY_TEMPLATE_PACK = "bootstrap3"
