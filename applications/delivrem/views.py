@@ -1,40 +1,20 @@
-from django.shortcuts import render
-try:
-    from urllib.parse import quote_plus #python 3
-except:
-    pass
-
-
 from datetime import datetime
 from django.contrib import messages
-from django.contrib.contenttypes.models import ContentType
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from django.core.urlresolvers import reverse_lazy
-from django.utils.decorators import method_decorator
-
-from django.db.models import Q
-from django.http import HttpResponse, HttpResponseRedirect, Http404
-from django.shortcuts import render, get_object_or_404, redirect
-from django.utils import timezone
 
 #django-friendship
 from django.contrib.auth.models import User
 from friendship.models import Friend, Follow
 
-from django.contrib.auth.decorators import login_required
-from django.core.mail import send_mail
-from django.http import Http404
 from django.shortcuts import redirect
 from django.utils.decorators import method_decorator
-from django.views import generic
-from django.views.generic import edit, DetailView, ListView
+from django.views.generic import edit, DetailView, ListView, TemplateView
 from django.views.generic import CreateView, UpdateView, DeleteView
 from braces.views import LoginRequiredMixin
 from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.decorators import login_required
-from django.contrib.sites.models import Site
-from django.conf import settings
 from .decorators import staff_or_author_required
 
 
@@ -67,15 +47,13 @@ class MessageMixin(object):
         messages.success(self.request, self.success_message)
         return super(MessageMixin, self).form_valid(form)
 
-class ProductListView(generic.ListView):
+class ProductListView(ListView):
     model = Product
     template_name = 'product_list.html'
     paginate_by = 25
 
     def get_context_data(self, **kwargs):
         context = super(ProductListView, self).get_context_data(**kwargs)
-        context['static_url'] = settings.STATIC_URL.rstrip('/')
-        context['domain'] = Site.objects.get_current().domain
         context['now'] = datetime.now()
         return context
 
@@ -112,23 +90,20 @@ class ProductUpdateView(MessageMixin, UpdateView):
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.ip = self.request.META['REMOTE_ADDR']
+        #migh need to remove that line
+        self.object.author = self.request.user
         return super(self.__class__, self).form_valid(form)
 
 post_edit = ProductUpdateView.as_view()
 
-
-class ProductDetailView(generic.DetailView):
+class ProductDetailView(DetailView):
     model = Product
     template_name = 'detail.html'
 
     def get_context_data(self, **kwargs):
         context = super(ProductDetailView, self).get_context_data(**kwargs)
-        context['static_url'] = settings.STATIC_URL.rstrip('/')
-        context['domain'] = Site.objects.get_current().domain
         context['now'] = datetime.now()
         return context
-
-
 
 class  ProductDeleteView(MessageMixin, DeleteView):
     model = Product
@@ -149,5 +124,5 @@ class  ProductDeleteView(MessageMixin, DeleteView):
 
 product_delete = ProductDeleteView.as_view()
 
-class HomeView(generic.TemplateView):
+class HomeView(TemplateView):
     template_name = 'home.html'
