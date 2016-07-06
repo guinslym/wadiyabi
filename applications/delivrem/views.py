@@ -10,6 +10,9 @@ from django.contrib import messages
 from django.contrib.contenttypes.models import ContentType
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
+from django.core.urlresolvers import reverse_lazy
+from django.utils.decorators import method_decorator
+
 from django.db.models import Q
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render, get_object_or_404, redirect
@@ -32,7 +35,7 @@ from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.decorators import login_required
 from django.contrib.sites.models import Site
 from django.conf import settings
-
+from .decorators import staff_or_author_required
 
 
 from . import models
@@ -83,15 +86,34 @@ class ProductListView(generic.ListView):
         """ Paginate by specified value in querystring, or use default class property value.  """
         return self.request.GET.get('paginate_by', self.paginate_by)
 
-class ProductCreateView(MessageMixin, StaffMixin, edit.CreateView):
+class ProductCreateView(MessageMixin, StaffMixin, CreateView):
+    model = Product
     form_class = ProductForm
-    template_name = 'change_bulletin.html'
-    success_url = '/'
-    success_message = "Created successfully"
+    template_name = '_form.html'
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super(ProductCreateView, self).form_valid(form)
+        self.object = form.save(commit=False)
+        self.object.author = self.request.user
+        self.object.ip = self.request.META['REMOTE_ADDR']
+        return super(self.__class__, self).form_valid(form)
+
+product_new = login_required(ProductCreateView.as_view())
+
+class ProductUpdateView(UpdateView):
+    model = Product
+    form_class = ProductForm
+
+    @method_decorator(login_required)
+    @method_decorator(staff_or_author_required(Product))
+    def dispatch(self, request, *args, **kwargs):
+        return super(self.__class__, self).dispatch(request, *args, **kwargs)
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.ip = self.request.META['REMOTE_ADDR']
+        return super(self.__class__, self).form_valid(form)
+
+post_edit = ProductUpdateView.as_view()
 
 
 class ProductDetailView(generic.DetailView):
@@ -110,7 +132,14 @@ class ProductUpdateView(MessageMixin, UpdateView):
     Sub-class UpdateView to pass Request to Form and limit queryset
     to requesting user.
     """
+    model = Product
+    form_class = ProductForm
     success_message = "Updated successfully"
+
+
+    @method_decorator(staff_or_author_required(Product))
+    def dispatch(self, request, *args, **kwargs):
+        return super(self.__class__, self).dispatch(request, *args, **kwargs)
 
     def get_form_kwargs(self):
         """ Add Request object to Form keyword arguments. """
@@ -121,7 +150,7 @@ class ProductUpdateView(MessageMixin, UpdateView):
     def get_queryset(self):
         """ Limit User to modifying only their own objects. """
         queryset = super(ProductUpdateView, self).get_queryset()
-        return queryset.filter(owner=self.request.user)
+        return queryset.filter(author=self.request.user)
 
 class ProductDeleteView(MessageMixin, DeleteView):
     """
@@ -132,6 +161,25 @@ class ProductDeleteView(MessageMixin, DeleteView):
     def get_queryset(self):
         queryset = super(ProductDeleteView, self).get_queryset()
         return queryset.filter(owner=self.request.user)
+
+class  ProductDeleteView(MessageMixin, DeleteView):
+    model = Product
+    template_name = '_delete_confirm.html'
+
+    @method_decorator(login_required)
+    @method_decorator(staff_or_author_required(Product))
+    def dispatch(self, request, *args, **kwargs):
+        return super(self.__class__, self).dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super(self.__class__, self).get_context_data(**kwargs)
+        context['back_page'] = reverse_lazy('delivrem:index')
+        return context
+
+    def get_success_url(self):
+        return reverse_lazy('delivrem:index')
+
+product_delete = ProductDeleteView.as_view()
 
 class HomeView(generic.TemplateView):
     template_name = 'home.html'

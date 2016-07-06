@@ -33,7 +33,7 @@ class ProductForm(ModelForm):
             'class': 'form-control',
         }))
     """
-    def __init__(self, *args, **kwargs):
+    def __init__(self, request, *args, **kwargs):
         super(ProductForm, self).__init__(*args, **kwargs)
 
         self.helper = FormHelper()

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load tz %}
 
-{% block title %}ResearchCompendia Page{% endblock %}
+{% block title %}Wadiyabi--USERNAME{% endblock %}
 
 {% block content %}
 
@@ -45,7 +45,11 @@
     <a href="{{ obj.get_absolute_url }}">
         {{ obj.showoff }}
     </a>
+    |   <a class="btn btn-default" href="{% url 'delivrem:update' obj.id %}"><i class="fa fa-pencil"></i> Edit</a>
+    |   <a class="btn btn-default" href="{% url 'delivrem:delete' obj.id %}"><i class="fa fa-pencil"></i> Delete</a>
   </div>
+
+
 
 </div>
 {% endfor %}
