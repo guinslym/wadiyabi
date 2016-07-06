@@ -62,7 +62,12 @@ LOCAL_APPS = (
     'applications.account',
     'applications.delivrem',
     'applications.comments',
+    'applications.shop',
+    'applications.cart',
+    'applications.orders',
 )
+
+CART_SESSION_ID = 'MyCart'
 
 CACHES = {
     'default': {
