@@ -11,14 +11,15 @@ from applications.delivrem.views import (
 	#post_detail,
 	#post_update,
 	#post_delete,
-    add_bulletin,
+    #add_bulletin,
+    ProductCreateView,
 	)
 
 urlpatterns = [
 	#url(r'^$', post_list, name='list'),
     #url(r'^$', views.HomeView.as_view(), name='home'),
-    url(r'^$', add_bulletin, name="add_bulletin"),
-    #url(r'^create/$', post_create),
+    #url(r'^$', add_bulletin, name="add_bulletin"),
+    url(r'^$', ProductCreateView.as_view()),
     #url(r'^(?P<slug>[\w-]+)/$', post_detail, name='detail'),
     #url(r'^(?P<slug>[\w-]+)/edit/$', post_update, name='update'),
     #url(r'^(?P<slug>[\w-]+)/delete/$', post_delete),
