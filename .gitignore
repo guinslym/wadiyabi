@@ -30,3 +30,4 @@ htmlcov/
 applications/*/tests/
 secret*
 settings/production.py
+media/delivrem/2016/07
