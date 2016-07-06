@@ -8,7 +8,6 @@ from django.core.urlresolvers import reverse_lazy
 from django.contrib.auth.models import User
 from friendship.models import Friend, Follow
 
-from django.shortcuts import redirect
 from django.utils.decorators import method_decorator
 from django.views.generic import edit, DetailView, ListView, TemplateView
 from django.views.generic import CreateView, UpdateView, DeleteView
