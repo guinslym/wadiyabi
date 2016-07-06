@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Compendium: {{ product.title }}{% endblock %}
+
+{% block content %}
+
+<h1>Editing: {{ product.showoff }}</h1>
+
+{% crispy form %}
+
+{% endblock %}
