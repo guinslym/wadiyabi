@@ -19,6 +19,11 @@ interesting:
   ☐ Check Behave as Instagram Redesign ... or Fb redesign
 
 todo:
+  ☐ Now I need to Integrated the Comments
+  ☐ Now I need to Integrate the Shopping Cart system
+  ☐ Now I need the layout
+  ☐ I will have to add Celery
+  ☐ Now I need to figure out a way for interactions Vendors/Sellers
  ✔ Find again on the internet with Django-allauth how does users uses this  @done(2016-06-14 19:37) @project(todo)
 ✔ I was able to set the authentication system @done(2016-06-14 19:38)
 ✔ Now I need to make sure that every routes in Account has a namespace (templates/*) @done(2016-06-14 19:50)
@@ -27,16 +32,7 @@ todo:
 ✔ Do the same with 'sugbox' @done (16-06-14 20:43)
 ✔ Know what my application should do @done(2016-06-15 01:09)
 ✔ Tests.. mixer and django-tests-plus @done (16-06-16 00:20)
-☐ Find a subject for the talk ---
-☐ Yoruba
-☐ TExt Emmanuel
-☐ By concrete finish an APP
-☐ Add logs for login user
-☐ Change the template
-☐ Test social auth user with fb or twitter
-☐ in Falardeau I should take the .gitignore
-☐ Django RestFramework to study
-☐ Finish with the tutorial (1hr30)
+
 
 Authentication:
 ☐ http://localhost:8004/account/logout/ looks funny check to see if I can redesign the template
