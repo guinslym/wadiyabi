@@ -16,18 +16,17 @@ from applications.delivrem.views import (
 	)
 
 urlpatterns = [
+url(r'^$', views.ProductListView.as_view(), name='list'),
+url(r'^create/$', views.ProductCreateView.as_view(), name='create'),
+url(r'^(?P<pk>\d+)/$', views.ProductDetailView.as_view(), name='detail'),
+url(r'^update/(?P<pk>\d+)/$', views.ProductUpdateView.as_view(), name='update'),
 	#url(r'^$', post_list, name='list'),
     #url(r'^$', views.HomeView.as_view(), name='home'),
     #url(r'^$', add_bulletin, name="add_bulletin"),
-    url(r'^$', ProductCreateView.as_view()),
     #url(r'^(?P<slug>[\w-]+)/$', post_detail, name='detail'),
     #url(r'^(?P<slug>[\w-]+)/edit/$', post_update, name='update'),
     #url(r'^(?P<slug>[\w-]+)/delete/$', post_delete),
     #url(r'^posts/$', "<appname>.views.<function_name>"),
-    url(r'^$', views.ProductListView.as_view(), name='list'),
-    url(r'^create/$', views.ProductCreateView.as_view(), name='create'),
-    url(r'^(?P<pk>\d+)/$', views.ProductDetailView.as_view(), name='detail'),
-    url(r'^update/(?P<pk>\d+)/$', views.ProductUpdateView.as_view(), name='update'),
 ]
 
 
