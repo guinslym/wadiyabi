@@ -86,7 +86,7 @@ class ProductListView(generic.ListView):
         """ Paginate by specified value in querystring, or use default class property value.  """
         return self.request.GET.get('paginate_by', self.paginate_by)
 
-class ProductCreateView(MessageMixin, StaffMixin, CreateView):
+class ProductCreateView(MessageMixin, CreateView):
     model = Product
     form_class = ProductForm
     template_name = '_form.html'
@@ -99,14 +99,15 @@ class ProductCreateView(MessageMixin, StaffMixin, CreateView):
 
 product_new = login_required(ProductCreateView.as_view())
 
-class ProductUpdateView(UpdateView):
+class ProductUpdateView(MessageMixin, UpdateView):
     model = Product
     form_class = ProductForm
+    template_name = '_form.html'
 
     @method_decorator(login_required)
     @method_decorator(staff_or_author_required(Product))
-    def dispatch(self, request, *args, **kwargs):
-        return super(self.__class__, self).dispatch(request, *args, **kwargs)
+    def dispatch(self, *args, **kwargs):
+        return super(self.__class__, self).dispatch(self.request, *args, **kwargs)
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
@@ -127,40 +128,7 @@ class ProductDetailView(generic.DetailView):
         context['now'] = datetime.now()
         return context
 
-class ProductUpdateView(MessageMixin, UpdateView):
-    """
-    Sub-class UpdateView to pass Request to Form and limit queryset
-    to requesting user.
-    """
-    model = Product
-    form_class = ProductForm
-    success_message = "Updated successfully"
 
-
-    @method_decorator(staff_or_author_required(Product))
-    def dispatch(self, request, *args, **kwargs):
-        return super(self.__class__, self).dispatch(request, *args, **kwargs)
-
-    def get_form_kwargs(self):
-        """ Add Request object to Form keyword arguments. """
-        kwargs = super(ProductUpdateView, self).get_form_kwargs()
-        kwargs.update({'request': self.request})
-        return kwargs
-
-    def get_queryset(self):
-        """ Limit User to modifying only their own objects. """
-        queryset = super(ProductUpdateView, self).get_queryset()
-        return queryset.filter(author=self.request.user)
-
-class ProductDeleteView(MessageMixin, DeleteView):
-    """
-    Sub-class DeleteView to restrict User to their own data.
-    """
-    success_message = "Deleted successfully"
-
-    def get_queryset(self):
-        queryset = super(ProductDeleteView, self).get_queryset()
-        return queryset.filter(owner=self.request.user)
 
 class  ProductDeleteView(MessageMixin, DeleteView):
     model = Product
