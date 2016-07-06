@@ -38,6 +38,7 @@ from django.conf import settings
 from . import models
 from . import forms
 from .forms import ProductForm
+from .models import Product
 #from .models import Post
 
 #ClassView Add/Edit/Delete
@@ -64,8 +65,8 @@ class MessageMixin(object):
         return super(MessageMixin, self).form_valid(form)
 
 class ProductListView(generic.ListView):
-    model = models.Product
-    template_name = 'index.html'
+    model = Product
+    template_name = 'product_list.html'
     paginate_by = 25
 
     def get_context_data(self, **kwargs):
@@ -94,8 +95,8 @@ class ProductCreateView(MessageMixin, StaffMixin, edit.CreateView):
 
 
 class ProductDetailView(generic.DetailView):
-    model = models.Product
-    template_name = 'compendia/detail.html'
+    model = Product
+    template_name = 'detail.html'
 
     def get_context_data(self, **kwargs):
         context = super(ProductDetailView, self).get_context_data(**kwargs)

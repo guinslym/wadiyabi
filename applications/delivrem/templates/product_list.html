@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load tz %}
+
+{% block title %}ResearchCompendia Page{% endblock %}
+
+{% block content %}
+
+{% if object_list %}
+
+<h2>Product list</h2>
+
+{{ page_obj.start_index }} through {{ page_obj.end_index }} of {{ paginator.count }} results
+
+<div class="container">
+{% if page_obj.has_other_pages %}
+<ul class="pagination" style="float:right">
+
+{% if page_obj.has_previous %}
+<li><a href="?page={{ page_obj.previous_page_number }}">&laquo</a></li>
+{% else %}
+<li class="disabled"><a href="#">&laquo</a></li>
+{% endif %}
+
+{% for num in paginator.page_range %}
+<li class="{% if page_obj.number == num %}active{% endif %}">
+  <a href="?page={{num}}">{{ num }}</a>
+</li>
+{% endfor %}
+
+{% if page_obj.has_next %}
+<li><a href="?page={{ page_obj.next_page_number }}">&raquo</a></li>
+{% else %}
+<li class="disabled"><a href="#">&raquo</a></li>
+{% endif %}
+</ul>
+
+{% endif %}
+</div>
+
+{% for obj in object_list %}
+
+<div class="panel panel-default">
+
+  <div class="panel-heading">
+    <a href="{{ obj.get_absolute_url }}">
+        {{ obj.showoff }}
+    </a>
+  </div>
+
+</div>
+{% endfor %}
+{{ page_obj.start_index }} through {{ page_obj.end_index }} of {{ paginator.count }} results
+
+{% if page_obj.has_other_pages %}
+<ul class="pagination" style="float:right">
+
+{% if page_obj.has_previous %}
+<li><a href="?page={{ page_obj.previous_page_number }}">&laquo</a></li>
+{% else %}
+<li class="disabled"><a href="#">&laquo</a></li>
+{% endif %}
+
+{% for num in paginator.page_range %}
+<li class="{% if page_obj.number == num %}active{% endif %}">
+  <a href="?page={{num}}">{{ num }}</a>
+</li>
+{% endfor %}
+
+{% if page_obj.has_next %}
+<li><a href="?page={{ page_obj.next_page_number }}">&raquo</a></li>
+{% else %}
+<li class="disabled"><a href="#">&raquo</a></li>
+{% endif %}
+</ul>
+{% endif %}
+
+{% endif %}
+
+{% endblock content %}
+Status API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Contact Help

@@ -98,6 +98,9 @@ class Product(TimeStampModel):
 
     def __str__(self):
         return str(self.id)
+    def get_absolute_url(self):
+        return reverse('delivrem:detail', args=(self.id,))
+
 
 class Zin(TimeStampModel):
     author = models.ForeignKey(settings.AUTH_USER_MODEL)

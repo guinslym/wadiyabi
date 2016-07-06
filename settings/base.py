@@ -56,6 +56,7 @@ THIRD_PARTY_APPS =  (
     'crispy_forms',
     'markdown_deux',
     'pagedown',
+    'flatblocks',
 )
 LOCAL_APPS = (
     'applications.account',
