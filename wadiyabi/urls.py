@@ -18,3 +18,11 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 ]
+
+'''
+urlpatterns = patterns(''
+    ...
+    url(r'^admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+    url(r'^secret/', include(admin.site.urls)),
+)
+'''

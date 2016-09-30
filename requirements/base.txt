@@ -11,4 +11,4 @@ django-pagedown
 django-flatblocks
 django-markdown-deux
 django-model-utils
-django-debug-toolbar
+django-admin-honeypot
