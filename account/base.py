@@ -51,8 +51,11 @@ BASE_APPS =  (
 THIRD_PARTY_APPS =  (
     'rest_framework',
     'bootstrap_pagination',
+    'friendship',
+    'social.apps.django_app.default',
 )
 LOCAL_APPS = (
+    'applications.account',
     'applications.delivrem',
 )
 
@@ -112,7 +115,6 @@ DEFAULT_LANGUAGE = 0
 LOCALE_PATHS = ('locale', )
 
 GOOGLE_ANALYTICS_PROPERTY_ID = ''
-GOOGLE_ANALYTICS_SITE_SPEED = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
@@ -156,10 +158,20 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
-    'django.contrib.auth.backends.RemoteUserBackend',
+    'applications.account.authentication.EmailAuthBackend',
 )
 
-LOGIN_REDIRECT_URL = "/"
-SHELL_PLUS = "ipython"
+
+
+
+from django.core.urlresolvers import reverse_lazy
+LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
+LOGIN_URL = reverse_lazy('login')
+LOGOUT_URL = reverse_lazy('logout')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')

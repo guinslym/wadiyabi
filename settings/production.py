@@ -1,18 +1,14 @@
 import os
 
 from .base import *
+
+SECRET_KEY = 'p-o33iwrvc0+3e%m9)8(b(lj3240lwih^u=7p%p+o$ln$^493k2n'
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DEBUG = False
+TEMPLATE_DEBUG_MODE = False
 
-SECRET_KEY = 'p-h93iwrvc0+3e%m9)8(b(ml1clqwih^u=7p%p+o$ln$^458kn'
 
-DEBUG=True
-TEMPLATE_DEBUG_MODE = True
-
-DEV_APPS = (
-    'debug_toolbar',
-)
-INSTALLED_APPS = BASE_APPS + DEV_APPS + THIRD_PARTY_APPS + LOCAL_APPS
-
+INSTALLED_APPS = BASE_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -25,7 +21,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    #'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 )
 
 
@@ -38,6 +34,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
 
 
 # LOGGING
@@ -57,7 +54,7 @@ LOGGING = {
              'level': 'INFO',
              'class': 'logging.FileHandler',
              'formatter': 'verbose',
-             'filename': BASE_DIR+'/logs/dev.log',
+             'filename': BASE_DIR+'/logs/log.log',
              'mode': 'a',
          },
      },
@@ -84,5 +81,4 @@ LOGGING = {
          },
      },
  }
-
-EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'

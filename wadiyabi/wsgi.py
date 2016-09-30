@@ -1,5 +1,5 @@
 """
-WSGI config for wadiyabi project.
+WSGI config for lineez project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

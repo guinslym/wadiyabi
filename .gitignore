@@ -1,7 +1,6 @@
 #Django gitignore
 
 cache/*
-*/*.log
 *.egg-info
 *.pot
 *.py[co]
@@ -19,15 +18,13 @@ build/
 tests/report/
 *.sqlite3
 cache/
-*/dev.log
-*/prod.log
-*/*.log
+#*/dev.log
+#*/prod.log
+#*/*.log
 
 secret_key.txt
+#settings/production.py
 staticfiles_dev/
 htmlcov/
 applications/*/tests/
-secret*
-settings/production.py
-media/delivrem/2016/07
 description.todo
