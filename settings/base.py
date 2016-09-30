@@ -52,7 +52,7 @@ THIRD_PARTY_APPS =  (
     'rest_framework',
     'bootstrap_pagination',
     'friendship',
-    'social.apps.django_app.default',
+    #'social.apps.django_app.default',
     'crispy_forms',
     'markdown_deux',
     'pagedown',
