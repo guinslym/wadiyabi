@@ -50,6 +50,7 @@ BASE_APPS =  (
 )
 THIRD_PARTY_APPS =  (
     'rest_framework',
+     'crispy_forms',
     'bootstrap_pagination',
 )
 LOCAL_APPS = (

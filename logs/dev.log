@@ -26,3 +26,191 @@
 [2016-10-01 20:27:10,259] WARNING % : Not Found: /site/css/style.css
 [2016-10-01 20:27:26,571] WARNING % : Not Found: /site/css/style.css
 [2016-10-01 20:27:40,942] WARNING % : Not Found: /site/css/style.css
+[2016-10-01 20:29:35,808] ERROR % : Internal Server Error: /create/
+Traceback (most recent call last):
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\defaulttags.py", line 1159, in load
+    lib = get_library(taglib)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\base.py", line 1402, in get_library
+    ','.join(tried_modules)))
+django.template.base.InvalidTemplateLibrary: Template library crispy_forms_tags not found, tried django.templatetags.crispy_forms_tags,django.contrib.admin.templatetags.crispy_forms_tags,django.contrib.staticfiles.templatetags.crispy_forms_tags,django.contrib.humanize.templatetags.crispy_forms_tags,django_extensions.templatetags.crispy_forms_tags,debug_toolbar.templatetags.crispy_forms_tags,rest_framework.templatetags.crispy_forms_tags,bootstrap_pagination.templatetags.crispy_forms_tags
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\core\handlers\base.py", line 164, in get_response
+    response = response.render()
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\response.py", line 158, in render
+    self.content = self.rendered_content
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\response.py", line 133, in rendered_content
+    template = self._resolve_template(self.template_name)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\response.py", line 88, in _resolve_template
+    new_template = self.resolve_template(template)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\response.py", line 78, in resolve_template
+    return loader.select_template(template, using=self.using)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\loader.py", line 64, in select_template
+    return engine.get_template(template_name, dirs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\backends\django.py", line 30, in get_template
+    return Template(self.engine.get_template(template_name, dirs))
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\engine.py", line 167, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\engine.py", line 141, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\loaders\base.py", line 13, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\loaders\base.py", line 23, in load_template
+    template = Template(source, origin, template_name, self.engine)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\base.py", line 191, in __init__
+    self.nodelist = engine.compile_string(template_string, origin)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\engine.py", line 261, in compile_string
+    return parser.parse()
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\base.py", line 342, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\loader_tags.py", line 210, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\base.py", line 342, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\defaulttags.py", line 1163, in load
+    (taglib, e))
+django.template.base.TemplateSyntaxError: 'crispy_forms_tags' is not a valid tag library: Template library crispy_forms_tags not found, tried django.templatetags.crispy_forms_tags,django.contrib.admin.templatetags.crispy_forms_tags,django.contrib.staticfiles.templatetags.crispy_forms_tags,django.contrib.humanize.templatetags.crispy_forms_tags,django_extensions.templatetags.crispy_forms_tags,debug_toolbar.templatetags.crispy_forms_tags,rest_framework.templatetags.crispy_forms_tags,bootstrap_pagination.templatetags.crispy_forms_tags
+[2016-10-01 20:31:17,932] ERROR % : Internal Server Error: /create/
+Traceback (most recent call last):
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\defaulttags.py", line 1159, in load
+    lib = get_library(taglib)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\base.py", line 1402, in get_library
+    ','.join(tried_modules)))
+django.template.base.InvalidTemplateLibrary: Template library crispy_forms_tag not found, tried django.templatetags.crispy_forms_tag,django.contrib.admin.templatetags.crispy_forms_tag,django.contrib.staticfiles.templatetags.crispy_forms_tag,django.contrib.humanize.templatetags.crispy_forms_tag,django_extensions.templatetags.crispy_forms_tag,debug_toolbar.templatetags.crispy_forms_tag,rest_framework.templatetags.crispy_forms_tag,bootstrap_pagination.templatetags.crispy_forms_tag
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\core\handlers\base.py", line 164, in get_response
+    response = response.render()
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\response.py", line 158, in render
+    self.content = self.rendered_content
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\response.py", line 133, in rendered_content
+    template = self._resolve_template(self.template_name)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\response.py", line 88, in _resolve_template
+    new_template = self.resolve_template(template)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\response.py", line 78, in resolve_template
+    return loader.select_template(template, using=self.using)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\loader.py", line 64, in select_template
+    return engine.get_template(template_name, dirs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\backends\django.py", line 30, in get_template
+    return Template(self.engine.get_template(template_name, dirs))
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\engine.py", line 167, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\engine.py", line 141, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\loaders\base.py", line 13, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\loaders\base.py", line 23, in load_template
+    template = Template(source, origin, template_name, self.engine)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\base.py", line 191, in __init__
+    self.nodelist = engine.compile_string(template_string, origin)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\engine.py", line 261, in compile_string
+    return parser.parse()
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\base.py", line 342, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\loader_tags.py", line 210, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\base.py", line 342, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\defaulttags.py", line 1163, in load
+    (taglib, e))
+django.template.base.TemplateSyntaxError: 'crispy_forms_tag' is not a valid tag library: Template library crispy_forms_tag not found, tried django.templatetags.crispy_forms_tag,django.contrib.admin.templatetags.crispy_forms_tag,django.contrib.staticfiles.templatetags.crispy_forms_tag,django.contrib.humanize.templatetags.crispy_forms_tag,django_extensions.templatetags.crispy_forms_tag,debug_toolbar.templatetags.crispy_forms_tag,rest_framework.templatetags.crispy_forms_tag,bootstrap_pagination.templatetags.crispy_forms_tag
+[2016-10-01 20:31:21,122] ERROR % : Internal Server Error: /create/
+Traceback (most recent call last):
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\defaulttags.py", line 1159, in load
+    lib = get_library(taglib)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\base.py", line 1402, in get_library
+    ','.join(tried_modules)))
+django.template.base.InvalidTemplateLibrary: Template library crispy_forms_tag not found, tried django.templatetags.crispy_forms_tag,django.contrib.admin.templatetags.crispy_forms_tag,django.contrib.staticfiles.templatetags.crispy_forms_tag,django.contrib.humanize.templatetags.crispy_forms_tag,django_extensions.templatetags.crispy_forms_tag,debug_toolbar.templatetags.crispy_forms_tag,rest_framework.templatetags.crispy_forms_tag,bootstrap_pagination.templatetags.crispy_forms_tag
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\core\handlers\base.py", line 164, in get_response
+    response = response.render()
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\response.py", line 158, in render
+    self.content = self.rendered_content
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\response.py", line 133, in rendered_content
+    template = self._resolve_template(self.template_name)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\response.py", line 88, in _resolve_template
+    new_template = self.resolve_template(template)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\response.py", line 78, in resolve_template
+    return loader.select_template(template, using=self.using)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\loader.py", line 64, in select_template
+    return engine.get_template(template_name, dirs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\backends\django.py", line 30, in get_template
+    return Template(self.engine.get_template(template_name, dirs))
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\engine.py", line 167, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\engine.py", line 141, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\loaders\base.py", line 13, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\loaders\base.py", line 23, in load_template
+    template = Template(source, origin, template_name, self.engine)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\base.py", line 191, in __init__
+    self.nodelist = engine.compile_string(template_string, origin)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\engine.py", line 261, in compile_string
+    return parser.parse()
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\base.py", line 342, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\loader_tags.py", line 210, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\base.py", line 342, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\defaulttags.py", line 1163, in load
+    (taglib, e))
+django.template.base.TemplateSyntaxError: 'crispy_forms_tag' is not a valid tag library: Template library crispy_forms_tag not found, tried django.templatetags.crispy_forms_tag,django.contrib.admin.templatetags.crispy_forms_tag,django.contrib.staticfiles.templatetags.crispy_forms_tag,django.contrib.humanize.templatetags.crispy_forms_tag,django_extensions.templatetags.crispy_forms_tag,debug_toolbar.templatetags.crispy_forms_tag,rest_framework.templatetags.crispy_forms_tag,bootstrap_pagination.templatetags.crispy_forms_tag
+[2016-10-01 20:31:35,545] ERROR % : Internal Server Error: /create/
+Traceback (most recent call last):
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\base.py", line 338, in parse
+    compile_func = self.tags[command]
+KeyError: 'crispy'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\core\handlers\base.py", line 164, in get_response
+    response = response.render()
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\response.py", line 158, in render
+    self.content = self.rendered_content
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\response.py", line 133, in rendered_content
+    template = self._resolve_template(self.template_name)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\response.py", line 88, in _resolve_template
+    new_template = self.resolve_template(template)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\response.py", line 78, in resolve_template
+    return loader.select_template(template, using=self.using)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\loader.py", line 64, in select_template
+    return engine.get_template(template_name, dirs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\backends\django.py", line 30, in get_template
+    return Template(self.engine.get_template(template_name, dirs))
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\engine.py", line 167, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\engine.py", line 141, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\loaders\base.py", line 13, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\loaders\base.py", line 23, in load_template
+    template = Template(source, origin, template_name, self.engine)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\base.py", line 191, in __init__
+    self.nodelist = engine.compile_string(template_string, origin)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\engine.py", line 261, in compile_string
+    return parser.parse()
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\base.py", line 342, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\loader_tags.py", line 210, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\base.py", line 342, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\loader_tags.py", line 184, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\base.py", line 340, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\base.py", line 395, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+django.template.base.TemplateSyntaxError: Invalid block tag: 'crispy', expected 'endblock'
+[2016-10-01 20:33:21,299] WARNING % : Not Found: /create/site/css/style.css
+[2016-10-01 20:33:21,463] WARNING % : Not Found: /create/site/img/favicon.ico
