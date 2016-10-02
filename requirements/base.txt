@@ -13,3 +13,4 @@ django-markdown-deux
 django-model-utils
 django-admin-honeypot
 django-braces
+Pillow
