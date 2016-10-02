@@ -27,7 +27,7 @@ class Product(TimeStampedModel):
     photo = models.ImageField(upload_to='delivrem/%Y/%m/%d',
                             help_text='Show us wadiyabi',
                             null=False, blank=False, verbose_name="pics")
-    showoff = models.CharField(max_length=440, null=True, blank=True, verbose_name='shoutout')
+    showoff = models.CharField(max_length=440, null=False, blank=False, verbose_name='shoutout')
     slug = models.CharField(max_length=220, null=True, blank=True)
     price = models.DecimalField(max_digits=16, decimal_places=2, default=0, null=True, blank=True)
     activated = models.BooleanField(default=False)
