@@ -58,3 +58,40 @@ class ProductForm(ModelForm):
                 layout.Submit("submit", _("Save")),
             )
         )
+
+
+class ProductEditForm(ModelForm):
+    class Meta:
+        model = Product
+        fields = ['showoff', 'photo', 'price']
+    """
+    """
+    def __init__(self, *args, **kwargs):
+        super(ProductEditForm, self).__init__(*args, **kwargs)
+
+        self.helper = FormHelper()
+        self.helper.form_action = ""
+        self.helper.form_method = "POST"
+
+        self.helper.layout = layout.Layout(
+            layout.Fieldset(
+                _("Add Price"),
+                layout.Field("price", css_class="input-block-level", rows="3"),
+                    ),
+            layout.Fieldset(
+                _("Main data"),
+                layout.Field("showoff", css_class="input-block-level", rows="3"),
+            ),
+            layout.Fieldset(
+                _("Image"),
+                layout.Field("photo", css_class="input-block-level"),
+                layout.HTML(u"""{% load i18n %}
+                    <p class="help-block">{% trans "Available formats are JPG, GIF, and PNG. Minimal size is 800 × 800 px." %}</p>
+                """),
+                title=_("Image upload"),
+                css_id="image_fieldset",
+            ),
+            bootstrap.FormActions(
+                layout.Submit("submit", _("Save")),
+            )
+        )

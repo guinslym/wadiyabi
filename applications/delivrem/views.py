@@ -19,7 +19,10 @@ from .decorators import staff_or_author_required
 
 from . import models
 from . import forms
-from .forms import ProductForm
+from .forms import (
+        ProductForm,
+        ProductEditForm
+    )
 from .models import Product
 #from .models import Post
 
@@ -91,7 +94,7 @@ product_new = login_required(ProductCreateView.as_view())
 
 class ProductUpdateView(SuccessMessageMixin, UpdateView):
     model = Product
-    form_class = ProductForm
+    form_class = ProductEditForm
     template_name = '_form.html'
 
     @method_decorator(login_required)
@@ -121,8 +124,8 @@ class  ProductDeleteView(SuccessMessageMixin, DeleteView):
     model = Product
     template_name = '_delete_confirm.html'
 
-    @method_decorator(login_required)
-    @method_decorator(staff_or_author_required(Product))
+    #@method_decorator(login_required)
+    #@method_decorator(staff_or_author_required(Product))
     def dispatch(self, request, *args, **kwargs):
         return super(self.__class__, self).dispatch(request, *args, **kwargs)
 

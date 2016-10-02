@@ -25,7 +25,9 @@
     {% block page %}
         <div class="wrapper">
             <div id="header" class="clearfix">
-                <h1 class="text-center">{% trans "My Website" %}</h1>
+                <h1 class="text-center">
+                  <a href="/"> {% trans "My Website" %}</a>
+                </h1>
                 {% block header_navigation %}
                 {% endblock %}
                 {% block language_chooser %}

@@ -254,3 +254,118 @@ AttributeError: 'ProductCreateView' object has no attribute 'success_message'
 [2016-10-01 20:44:17,875] WARNING % : Not Found: /11/site/img/favicon.ico
 [2016-10-01 20:44:22,147] WARNING % : Not Found: /site/css/style.css
 [2016-10-01 20:47:45,508] WARNING % : Not Found: /site/css/style.css
+[2016-10-01 20:48:21,397] WARNING % : Not Found: /update/11/site/css/style.css
+[2016-10-01 20:48:21,817] WARNING % : Not Found: /update/11/site/img/favicon.ico
+[2016-10-01 20:51:42,049] ERROR % : Internal Server Error: /update/11/
+Traceback (most recent call last):
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\utils\decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\utils\decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\utils\decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "C:\Users\English\Documents\GitHub\wadiyabi\applications\delivrem\decorators.py", line 13, in wrap
+    return view_fn(request, *args, **kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\utils\decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "C:\Users\English\Documents\GitHub\wadiyabi\applications\delivrem\views.py", line 103, in dispatch
+    return super(self.__class__, self).dispatch(self.request, *args, **kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\views\generic\edit.py", line 268, in get
+    return super(BaseUpdateView, self).get(request, *args, **kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\views\generic\edit.py", line 205, in get
+    form = self.get_form()
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\views\generic\edit.py", line 74, in get_form
+    return form_class(**self.get_form_kwargs())
+  File "C:\Users\English\Documents\GitHub\wadiyabi\applications\delivrem\forms.py", line 84, in __init__
+    super(ProductForm, self).__init__(*args, **kwargs)
+TypeError: super(type, obj): obj must be an instance or subtype of type
+[2016-10-01 20:52:07,306] ERROR % : Internal Server Error: /update/11/
+Traceback (most recent call last):
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\utils\decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\utils\decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\utils\decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "C:\Users\English\Documents\GitHub\wadiyabi\applications\delivrem\decorators.py", line 13, in wrap
+    return view_fn(request, *args, **kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\utils\decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "C:\Users\English\Documents\GitHub\wadiyabi\applications\delivrem\views.py", line 103, in dispatch
+    return super(self.__class__, self).dispatch(self.request, *args, **kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\views\generic\edit.py", line 268, in get
+    return super(BaseUpdateView, self).get(request, *args, **kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\views\generic\edit.py", line 205, in get
+    form = self.get_form()
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\views\generic\edit.py", line 74, in get_form
+    return form_class(**self.get_form_kwargs())
+  File "C:\Users\English\Documents\GitHub\wadiyabi\applications\delivrem\forms.py", line 70, in __init__
+    super(ProductForm, self).__init__(*args, **kwargs)
+TypeError: super(type, obj): obj must be an instance or subtype of type
+[2016-10-01 20:52:17,734] WARNING % : Not Found: /update/11/site/css/style.css
+[2016-10-01 20:52:29,073] WARNING % : Not Found: /11/site/css/style.css
+[2016-10-01 20:52:35,429] WARNING % : Not Found: /site/css/style.css
+[2016-10-01 20:53:15,930] WARNING % : Not Found: /site/css/style.css
+[2016-10-01 20:54:00,988] WARNING % : Not Found: /update/5/site/css/style.css
+[2016-10-01 20:54:01,103] WARNING % : Not Found: /update/5/site/img/favicon.ico
+[2016-10-01 20:54:08,850] WARNING % : Not Found: /create/site/css/style.css
+[2016-10-01 20:54:22,275] ERROR % : Internal Server Error: /delete/1/
+Traceback (most recent call last):
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\core\handlers\base.py", line 164, in get_response
+    response = response.render()
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\response.py", line 158, in render
+    self.content = self.rendered_content
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\response.py", line 133, in rendered_content
+    template = self._resolve_template(self.template_name)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\response.py", line 88, in _resolve_template
+    new_template = self.resolve_template(template)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\response.py", line 78, in resolve_template
+    return loader.select_template(template, using=self.using)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\template\loader.py", line 76, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list))
+django.template.base.TemplateDoesNotExist: _delete_confirm.html
+[2016-10-01 20:56:07,369] WARNING % : Not Found: /delete/1/site/css/style.css
+[2016-10-01 20:56:07,500] WARNING % : Not Found: /delete/1/site/img/favicon.ico
+[2016-10-01 20:56:09,146] WARNING % : Not Found: /site/css/style.css
+[2016-10-01 20:56:20,774] WARNING % : Not Found: /site/css/style.css
+[2016-10-01 20:56:23,872] WARNING % : Not Found: /delete/4/site/css/style.css
+[2016-10-01 20:56:24,797] WARNING % : Not Found: /delete/4/site/img/favicon.ico
+[2016-10-01 20:56:26,100] WARNING % : Not Found: /site/css/style.css
+[2016-10-01 20:56:31,748] WARNING % : Not Found: /delete/4/site/css/style.css
+[2016-10-01 20:56:33,890] WARNING % : Not Found: /site/css/style.css
+[2016-10-01 20:56:37,032] WARNING % : Not Found: /site/css/style.css
+[2016-10-01 20:57:14,588] WARNING % : Not Found: /delete/6/site/css/style.css
+[2016-10-01 20:57:14,836] WARNING % : Not Found: /delete/6/site/img/favicon.ico
+[2016-10-01 20:57:16,169] WARNING % : Not Found: /site/css/style.css
+[2016-10-01 20:57:19,598] WARNING % : Not Found: /delete/8/site/css/style.css
+[2016-10-01 20:57:19,913] WARNING % : Not Found: /delete/8/site/img/favicon.ico
+[2016-10-01 20:57:20,015] WARNING % : Not Found: /delete/8/site/img/favicon.ico
+[2016-10-01 20:57:21,589] WARNING % : Not Found: /site/css/style.css
+[2016-10-01 20:58:44,447] WARNING % : Not Found: /site/css/style.css
+[2016-10-01 20:58:47,301] WARNING % : Not Found: /delete/11/site/css/style.css
+[2016-10-01 20:58:47,442] WARNING % : Not Found: /delete/11/site/img/favicon.ico
+[2016-10-01 20:58:48,870] WARNING % : Not Found: /site/css/style.css
+[2016-10-01 20:58:50,463] WARNING % : Not Found: /delete/11/site/css/style.css
+[2016-10-01 20:58:51,920] WARNING % : Not Found: /site/css/style.css
+[2016-10-01 21:00:55,940] WARNING % : Not Found: /site/css/style.css
+[2016-10-01 21:00:57,573] WARNING % : Not Found: /delete/11/site/css/style.css
+[2016-10-01 21:00:59,305] WARNING % : Not Found: /site/css/style.css
+[2016-10-01 21:01:42,660] WARNING % : Not Found: /update/10/site/css/style.css
+[2016-10-01 21:01:42,895] WARNING % : Not Found: /update/10/site/img/favicon.ico
+[2016-10-01 21:05:42,306] WARNING % : Not Found: /site/css/style.css

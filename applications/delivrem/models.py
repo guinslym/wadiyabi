@@ -11,6 +11,7 @@ from model_utils.models import TimeStampedModel
 import datetime
 from django.utils import timezone
 from django.forms.models import model_to_dict
+from django.core.validators import MaxValueValidator
 # Create your models here.
 '''
  ☐ User
@@ -31,6 +32,7 @@ class Product(TimeStampedModel):
     slug = models.CharField(max_length=220, null=True, blank=True)
     price = models.DecimalField(max_digits=16, decimal_places=2, default=0, null=True, blank=True)
     activated = models.BooleanField(default=False)
+    quantity = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(100),])
     #did this product have been sale
     sale = models.BooleanField(default=False)
 
