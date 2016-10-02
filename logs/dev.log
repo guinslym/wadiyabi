@@ -369,3 +369,4 @@ django.template.base.TemplateDoesNotExist: _delete_confirm.html
 [2016-10-01 21:01:42,660] WARNING % : Not Found: /update/10/site/css/style.css
 [2016-10-01 21:01:42,895] WARNING % : Not Found: /update/10/site/img/favicon.ico
 [2016-10-01 21:05:42,306] WARNING % : Not Found: /site/css/style.css
+[2016-10-01 21:08:11,009] WARNING % : Not Found: /site/css/style.css
