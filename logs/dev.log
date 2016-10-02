@@ -214,3 +214,43 @@ Traceback (most recent call last):
 django.template.base.TemplateSyntaxError: Invalid block tag: 'crispy', expected 'endblock'
 [2016-10-01 20:33:21,299] WARNING % : Not Found: /create/site/css/style.css
 [2016-10-01 20:33:21,463] WARNING % : Not Found: /create/site/img/favicon.ico
+[2016-10-01 20:35:09,284] ERROR % : Internal Server Error: /create/
+Traceback (most recent call last):
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\views\generic\edit.py", line 249, in post
+    return super(BaseCreateView, self).post(request, *args, **kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\views\generic\edit.py", line 215, in post
+    return self.form_valid(form)
+  File "C:\Users\English\Documents\GitHub\wadiyabi\applications\delivrem\views.py", line 73, in form_valid
+    self.object.author = self.request.user
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\db\models\fields\related.py", line 639, in __set__
+    self.field.rel.to._meta.object_name,
+ValueError: Cannot assign "<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x00000000050C4C50>>": "Product.author" must be a "User" instance.
+[2016-10-01 20:36:21,223] WARNING % : Not Found: /site/css/style.css
+[2016-10-01 20:36:25,853] WARNING % : Not Found: /create/site/css/style.css
+[2016-10-01 20:36:37,431] ERROR % : Internal Server Error: /create/
+Traceback (most recent call last):
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\views\generic\edit.py", line 249, in post
+    return super(BaseCreateView, self).post(request, *args, **kwargs)
+  File "C:\Users\English\Miniconda3\lib\site-packages\django\views\generic\edit.py", line 215, in post
+    return self.form_valid(form)
+  File "C:\Users\English\Documents\GitHub\wadiyabi\applications\delivrem\views.py", line 75, in form_valid
+    return super(self.__class__, self).form_valid(form)
+  File "C:\Users\English\Documents\GitHub\wadiyabi\applications\delivrem\views.py", line 46, in form_valid
+    messages.success(self.request, self.success_message)
+AttributeError: 'ProductCreateView' object has no attribute 'success_message'
+[2016-10-01 20:44:17,426] WARNING % : Not Found: /11/site/css/style.css
+[2016-10-01 20:44:17,875] WARNING % : Not Found: /11/site/img/favicon.ico
+[2016-10-01 20:44:22,147] WARNING % : Not Found: /site/css/style.css
+[2016-10-01 20:47:45,508] WARNING % : Not Found: /site/css/style.css

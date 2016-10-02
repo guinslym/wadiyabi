@@ -28,23 +28,36 @@ from .models import Product
 def is_staff(user):
     return user and not user.is_anonymous() and user.is_staff
 
+
+class SuccessMessageMixin(object):
+    """
+    Adds a success message on successful form submission.
+    """
+    success_message = ''
+
+    def form_valid(self, form):
+        response = super(SuccessMessageMixin, self).form_valid(form)
+        success_message = self.get_success_message()
+        if success_message:
+            messages.success(self.request, success_message)
+        return response
+
+    def delete(self, request, *args, **kwargs):
+        response = super(SuccessMessageMixin, self).delete(request, *args, **kwargs)
+        success_message = self.get_success_message()
+        if success_message:
+            messages.success(self.request, success_message)
+        return  response
+
+    def get_success_message(self):
+        return self.success_message % dict(object=self.object)
+
 class StaffMixin(object):
     @method_decorator(login_required)
     @method_decorator(user_passes_test(is_staff))
     def dispatch(self, *args, **kwargs):
         return super(StaffMixin, self).dispatch(*args, **kwargs)
 
-class MessageMixin(object):
-    """
-    Display notifications when using Class-Based Views
-    """
-    def delete(self, request, *args, **kwargs):
-        messages.success(self.request, self.success_message)
-        return super(MessageMixin, self).delete(request, *args, **kwargs)
-
-    def form_valid(self, form):
-        messages.success(self.request, self.success_message)
-        return super(MessageMixin, self).form_valid(form)
 
 class ProductListView(ListView):
     model = Product
@@ -63,7 +76,7 @@ class ProductListView(ListView):
         """ Paginate by specified value in querystring, or use default class property value.  """
         return self.request.GET.get('paginate_by', self.paginate_by)
 
-class ProductCreateView(MessageMixin, CreateView):
+class ProductCreateView(SuccessMessageMixin, CreateView):
     model = Product
     form_class = ProductForm
     template_name = '_form.html'
@@ -76,7 +89,7 @@ class ProductCreateView(MessageMixin, CreateView):
 
 product_new = login_required(ProductCreateView.as_view())
 
-class ProductUpdateView(MessageMixin, UpdateView):
+class ProductUpdateView(SuccessMessageMixin, UpdateView):
     model = Product
     form_class = ProductForm
     template_name = '_form.html'
@@ -104,7 +117,7 @@ class ProductDetailView(DetailView):
         context['now'] = datetime.now()
         return context
 
-class  ProductDeleteView(MessageMixin, DeleteView):
+class  ProductDeleteView(SuccessMessageMixin, DeleteView):
     model = Product
     template_name = '_delete_confirm.html'
 

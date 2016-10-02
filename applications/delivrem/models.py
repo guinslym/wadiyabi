@@ -38,6 +38,8 @@ class Product(TimeStampedModel):
         return str(self.id)
     def get_absolute_url(self):
         return reverse('delivrem:detail', args=(self.id,))
+    class Meta:
+        ordering = ["-created"]
 
 
 class Zin(TimeStampedModel):
