@@ -26,6 +26,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     #'whitenoise.middleware.WhiteNoiseMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 
@@ -86,3 +87,17 @@ LOGGING = {
  }
 
 EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'
+
+# Always use IPython for shell_plus
+SHELL_PLUS = "ipython"
+
+# Need to add DebugToolbarMiddleware
+SHELL_PLUS_PRE_IMPORTS = (
+    #('module.submodule1', ('class1', 'function2')),
+    #('module.submodule2', 'function3'),
+    ('applications.delivrem', '*'),
+    ('applications.delivrem.models', '*')
+)
+
+# print SQL queries in shell_plus
+SHELL_PLUS_PRINT_SQL = False

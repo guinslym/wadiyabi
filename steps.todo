@@ -2,7 +2,7 @@ App:
   ☐ Create Product
     ☐ Urls:
       ☐ update/id
-      ☐ create
+      ✔ create @done(2016-10-09 17:06) @project(App / ☐ Urls)
       ☐ sell-it/id
       ☐ delete/id
       ☐ Home\\index
@@ -12,3 +12,9 @@ App:
   ☐ Create Comments
     ☐ Urls:
   ☐ Create Like
+
+
+Question:
+context = super(ProductListView, self).get_context_data(**kwargs)
+context = super(self.__class__, self).get_context_data(**kwargs)
+context = super().get_context_data(**kwargs)

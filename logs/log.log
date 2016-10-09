@@ -40,3 +40,80 @@
 [2016-10-09 16:46:39,208] WARNING % : Not Found: /media/delivrem/2016/10/01/image_UEtLhSa.jpg
 [2016-10-09 16:46:39,215] WARNING % : Not Found: /media/delivrem/2016/10/01/image_FVFyRJf.jpg
 [2016-10-09 16:46:39,215] WARNING % : Not Found: /media/delivrem/2016/10/01/image_bfiE4Pf.jpg
+[2016-10-09 16:52:15,564] WARNING % : Not Found: /site/css/style.css
+[2016-10-09 16:52:17,358] WARNING % : Not Found: /site/css/style.css
+[2016-10-09 16:52:17,933] WARNING % : Not Found: /site/css/style.css
+[2016-10-09 17:05:49,925] WARNING % : Not Found: /delivrem/create
+[2016-10-09 17:05:50,139] WARNING % : Not Found: /favicon.ico
+[2016-10-09 17:05:54,516] WARNING % : Not Found: /create/site/css/style.css
+[2016-10-09 17:05:54,683] WARNING % : Not Found: /create/site/img/favicon.ico
+[2016-10-09 17:08:30,271] ERROR % : Internal Server Error: /create/
+Traceback (most recent call last):
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\views\generic\base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\views\generic\edit.py", line 249, in post
+    return super(BaseCreateView, self).post(request, *args, **kwargs)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\views\generic\edit.py", line 215, in post
+    return self.form_valid(form)
+  File "C:\Users\gmond071\Documents\GitHub\wadiyabi\applications\delivrem\views.py", line 89, in form_valid
+    self.object.author = self.request.user
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\db\models\fields\related.py", line 639, in __set__
+    self.field.rel.to._meta.object_name,
+ValueError: Cannot assign "<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x00000000050C8CF8>>": "Product.author" must be a "User" instance.
+[2016-10-09 17:08:48,731] ERROR % : Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\core\handlers\base.py", line 164, in get_response
+    response = response.render()
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\response.py", line 158, in render
+    self.content = self.rendered_content
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\response.py", line 135, in rendered_content
+    content = template.render(context, self._request)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\base.py", line 210, in render
+    return self._render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\base.py", line 919, in render_node
+    return node.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\base.py", line 919, in render_node
+    return node.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\base.py", line 919, in render_node
+    return node.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\base.py", line 919, in render_node
+    return node.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\base.py", line 1197, in render
+    return func(*resolved_args, **resolved_kwargs)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\contrib\admin\templatetags\admin_static.py", line 17, in static
+    return _static(path)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\contrib\staticfiles\templatetags\staticfiles.py", line 9, in static
+    return staticfiles_storage.url(path)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\contrib\staticfiles\storage.py", line 131, in url
+    hashed_name = self.stored_name(clean_name)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\contrib\staticfiles\storage.py", line 280, in stored_name
+    cache_name = self.clean_name(self.hashed_name(name))
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\contrib\staticfiles\storage.py", line 94, in hashed_name
+    (clean_name, self))
+ValueError: The file 'admin/css/base.css' could not be found with <whitenoise.storage.CompressedManifestStaticFilesStorage object at 0x00000000050EFF60>.
