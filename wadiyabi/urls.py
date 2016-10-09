@@ -27,6 +27,7 @@ urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 # I need to set MEDIA_URL and MEDIA_ROOT in url
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+
 '''
 urlpatterns = patterns(''
     ...
