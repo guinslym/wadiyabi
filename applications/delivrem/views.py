@@ -37,7 +37,7 @@ from .models import Product
 
 class ProductListView(ListView):
     model = Product
-    template_name = 'product_list.html'
+    template_name = 'products.html'
     paginate_by = 25
 
     def get_context_data(self, **kwargs):
