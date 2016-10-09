@@ -1,92 +1,24 @@
-{% block doctype %}<!DOCTYPE html>{% endblock %}
-{% load i18n %}
-<html lang="{{ LANGUAGE_CODE }}">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{% block title %}{% endblock %}{% trans "My Website" %}</title>
-    <link rel="icon" href="{{ STATIC_URL }}site/img/favicon.ico" type="image/png">
-
-    {% block meta_tags %}{% endblock %}
-
-    {% block stylesheet %}
-        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-        <link href="{{ STATIC_URL }}site/css/style.css" rel="stylesheet" media="screen" type="text/css" />
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Django Class Based Views Rock</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <style>
+      .title {
+        text-align: center;
+        font-weight: 200;
+      }
+    </style>
+  </head>
+  <body>
+    {% block body %}
+      <div class="container">
+        {% block container %}{% endblock %}
+      </div>
     {% endblock %}
 
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
-    {% block js %}{% endblock %}
-    {% block extrahead %}{% endblock %}
-</head>
-
-
-
-
-    <div class="container">
-
-      <!-- Static navbar -->
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Wadiyabi</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li><a href="/create">Create Wadigram</a></li>
-              </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </nav>
-
-    </div> <!-- /container -->
-
-
-<body class="{% block bodyclass %}{% endblock %}">
-    {% block page %}
-        <div class="wrapper">
-            <div id="header" class="clearfix">
-                <h1 class="text-center">
-                  <a href="/"> {% trans "My Website" %}</a>
-                </h1>
-                {% block header_navigation %}
-                {% endblock %}
-                {% block language_chooser %}
-                {% endblock %}
-            </div>
-            {% block container %}
-                <div class="container">
-                    <div class="row">
-                        <div id="content" class="col-md-12">
-                            {% block content %}
-                            {% endblock %}
-                        </div>
-                    </div>
-                </div>
-            {% endblock %}
-            <div id="footer" class="clearfix">
-                {% block footer_navigation %}
-                {% endblock %}
-            </div>
-        </div>
-    {% endblock %}
-    <script type="text/javascript">
-        $(function() {
-            $("a[href^='http://']").attr("target", "_blank");
-        });
-    </script>
-    {% block extrabody %}{% endblock %}
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js" />
+  </body>
 </html>

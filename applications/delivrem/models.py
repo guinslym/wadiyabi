@@ -42,7 +42,10 @@ class Product(TimeStampedModel):
         return reverse('delivrem:detail', args=(self.id,))
     class Meta:
         ordering = ["-created"]
-
+    '''
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'pk':self.id})
+    '''
 
 class Zin(TimeStampedModel):
     author = models.ForeignKey(settings.AUTH_USER_MODEL)

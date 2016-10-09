@@ -17,6 +17,7 @@ mixer==5.5.7
 stripe==1.35.0
 mock==2.0.0
 flake8
+Werkzeug
 
 #important
 #use this versions

@@ -16,6 +16,8 @@ from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.decorators import login_required
 from .decorators import staff_or_author_required
 
+from django.core.urlresolvers import reverse
+
 from .utils import (
     is_staff,
     SuccessMessageMixin,
@@ -82,6 +84,7 @@ class ProductUpdateView(SuccessMessageMixin, UpdateView):
 
 post_edit = ProductUpdateView.as_view()
 
+"""
 class ProductDetailView(DetailView):
     model = Product
     template_name = 'detail.html'
@@ -90,6 +93,12 @@ class ProductDetailView(DetailView):
         context = super(ProductDetailView, self).get_context_data(**kwargs)
         context['now'] = datetime.now()
         return context
+"""
+
+class ProductDetailView(DetailView):
+    template_name = "detail.html"
+    model = Product
+
 
 class  ProductDeleteView(SuccessMessageMixin, DeleteView):
     model = Product
