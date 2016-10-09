@@ -1,4 +1,4 @@
-django==1.8.13
+django==1.8.15
 django-allauth==0.23.0
 djangorestframework==3.3.1
 django-bootstrap-pagination==1.5.1
@@ -14,3 +14,4 @@ django-model-utils
 django-admin-honeypot
 django-braces
 Pillow
+whitenoise
