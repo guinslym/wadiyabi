@@ -1,14 +1,14 @@
-Installation steps:
- ✔ Create your django project 'django-admin startproject myproject' @done (16-06-09 17:17)
- ✔ cd myproject @done (16-06-09 17:17)
- ☐ cp ~/django_local_boilerplate/* .
- ☐ change minimal settings in settings/base.py from what you have inside myproject/settings.py
- ☐ change myproject/wsig.py and manage.py to point to 'settings.dispatch'
- ☐ python manage.py check
- ☐ py.test
- ☐ if everything is ok then 'rm myproject/settings.py'
-
- helper-documentation:
-  ☐ https://github.com/smrkem/Django-TDD-goat-tutorial
-
-  https://github.com/algolia/places
+App:
+  ☐ Create Product
+    ☐ Urls:
+      ☐ update/id
+      ☐ create
+      ☐ sell-it/id
+      ☐ delete/id
+      ☐ Home\\index
+      ☐ detail/id
+  ☐ Create User
+    ☐ Urls:
+  ☐ Create Comments
+    ☐ Urls:
+  ☐ Create Like
