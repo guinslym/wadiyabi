@@ -29,11 +29,6 @@ from .forms import (
         ProductEditForm
     )
 from .models import Product
-#from .models import Post
-
-#ClassView Add/Edit/Delete
-
-
 
 class ProductListView(ListView):
     model = Product

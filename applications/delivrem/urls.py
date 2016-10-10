@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^create/$', ProductCreateView.as_view(), name='product-create'),
     url(r'^(?P<pk>\d+)/$', ProductDetailView.as_view(), name='product-detail'),
     url(r'^update/(?P<pk>\d+)/$', ProductUpdateView.as_view(), name='product-update'),
+    url(r'^sell-it/(?P<pk>\d+)/$', ProductUpdateView.as_view(), name='product-sell-it'),
     url(r'^delete/(?P<pk>\d+)/$', ProductDeleteView.as_view(), name='product-delete'),
 ]
 

@@ -1,10 +1,16 @@
 {% extends "base.html" %}
 
 {% block container %}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <h3 class="title">Wadiyabi</h3>
   <div class="collection">
     {% for article in object_list %}
-        <a class="collection-item" href="{% url 'delivrem:product-detail' article.id %}">{{article.showoff}}</a>
+
+        <a class="collection-item" href="{% url 'delivrem:product-detail' article.id %}">
+          <i class="tiny material-icons">done</i>
+          {{article.showoff}}
+        </a>
     {% endfor %}
   </div>
   <a class="btn right" href="{% url 'delivrem:product-create' %}">Create Article</a>
