@@ -11,13 +11,17 @@ App:
     ✔ Authenticate user @done(2016-10-10 00:11) @project(App)
     ✔ Create login @done(2016-10-10 00:11) @project(App)
     ✔ Create logout @done(2016-10-10 00:11) @project(App)
-    ☐ Create Profile
+  ☐ Create Profile
     ☐ Urls:
   ☐ Create Comments
     ☐ Urls:
   ✔ Create Like (django-vote) @done(2016-10-10 00:42) @project(App)
+    ☐ Urls:
   ✔ Create Follow (django-friendship) @done(2016-10-10 00:42) @project(App)
+    ☐ Urls:
 
+Process:
+  ☐ I absolutely need to complete the Desktop App before starting the React/Angular-App
 
 Question:
 context = super(ProductListView, self).get_context_data(**kwargs)

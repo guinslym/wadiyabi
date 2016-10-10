@@ -52,8 +52,12 @@ THIRD_PARTY_APPS =  (
     'crispy_forms',
     #django-friendship   # https://github.com/revsys/django-friendship
     'friendship',
-    # django-vote # https://github.com/shanbay/django-vote
+    # django-vote        # https://github.com/shanbay/django-vote
     'vote',
+    # django_ajax        # https://github.com/yceruto/django-ajax
+    'django_ajax',
+    # django-contrib-comments # https://django-contrib-comments.readthedocs.io/en/latest/quickstart.html
+    'django_comments',
     'bootstrap_pagination',
     ## Allaouth          # https://django-allauth.readthedocs.io/en/latest/index.html
     'allauth',
@@ -71,6 +75,7 @@ THIRD_PARTY_APPS =  (
     'rest_auth.registration',
 )
 LOCAL_APPS = (
+    'applications.account',
     'applications.delivrem',
 )
 
