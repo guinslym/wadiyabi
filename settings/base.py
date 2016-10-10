@@ -50,8 +50,10 @@ BASE_APPS =  (
 )
 THIRD_PARTY_APPS =  (
     'crispy_forms',
-    #django-friendship   #https://github.com/revsys/django-friendship
+    #django-friendship   # https://github.com/revsys/django-friendship
     'friendship',
+    # django-vote # https://github.com/shanbay/django-vote
+    'vote',
     'bootstrap_pagination',
     ## Allaouth          # https://django-allauth.readthedocs.io/en/latest/index.html
     'allauth',

@@ -15,8 +15,8 @@ App:
     ☐ Urls:
   ☐ Create Comments
     ☐ Urls:
-  ☐ Create Like
-  ☐ Create Follow
+  ✔ Create Like (django-vote) @done(2016-10-10 00:42) @project(App)
+  ✔ Create Follow (django-friendship) @done(2016-10-10 00:42) @project(App)
 
 
 Question:
