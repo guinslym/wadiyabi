@@ -1,17 +1,22 @@
 App:
   ☐ Create Product
     ☐ Urls:
-      ☐ update/id
+      ✔ update/id @done(2016-10-09 23:07) @project(App / ☐ Urls)
       ✔ create @done(2016-10-09 17:06) @project(App / ☐ Urls)
-      ☐ sell-it/id
-      ☐ delete/id
-      ☐ Home\\index
-      ☐ detail/id
+      ✔ sell-it/id @done(2016-10-09 23:07) @project(App / ☐ Urls)
+      ✔ delete/id @done(2016-10-09 23:07) @project(App / ☐ Urls)
+      ✔ Home\\index @done(2016-10-09 23:08) @project(App / ☐ Urls)
+      ✔ detail/id @done(2016-10-09 23:08) @project(App / ☐ Urls)
   ☐ Create User
+    ☐ Authenticate user
+    ☐ Create login
+    ☐ Create logout
+    ☐ Create Profile
     ☐ Urls:
   ☐ Create Comments
     ☐ Urls:
   ☐ Create Like
+  ☐ Create Follow
 
 
 Question:
