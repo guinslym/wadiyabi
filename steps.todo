@@ -22,6 +22,7 @@ App:
 
 Process:
   ☐ I absolutely need to complete the Desktop App before starting the React/Angular-App
+  ☐ I must complete Wadiyabi before starting Lineez (whithin the same project)
 
 Question:
 context = super(ProductListView, self).get_context_data(**kwargs)
