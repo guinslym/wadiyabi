@@ -43,48 +43,68 @@ DATABASES = {
 
 # LOGGING
 LOGGING = {
-     'version': 1,
-     'disable_existing_loggers': True,
-     'formatters': {
-         'simple': {
-             'format': '[%(asctime)s] %(levelname)s : %(message)s'
-         },
-         'verbose': {
-             'format': '[%(asctime)s] %(levelname)s %(filename) % : %(message)s'
-         },
-     },
-     'handlers': {
-         'file': {
-             'level': 'INFO',
-             'class': 'logging.FileHandler',
-             'formatter': 'verbose',
-             'filename': BASE_DIR+'/logs/dev.log',
-             'mode': 'a',
-         },
-     },
-     'loggers': {
-         'django': {
-             'handlers': ['file'],
-             'level':'INFO',
-             'propagate': True,
-         },
-         'applications.delivrem.views': {
-             'handlers': ['file'],
-             'level':'INFO',
-             'propagate': True,
-         },
-         'applications.delivrem.utils': {
-             'handlers': ['file'],
-             'level':'INFO',
-             'propagate': True,
-         },
-         'applications.delivrem.tweets': {
-             'handlers': ['file'],
-             'level':'INFO',
-             'propagate': True,
-         },
-     },
- }
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(name)s %(process)d %(thread)d %(message)s'
+        },
+        'standard': {
+            'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+        'clear': {
+            'format': '%(message)s'
+        },
+    },
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'handlers': {
+        'error_log': {
+            'level': 'ERROR',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': BASE_DIR+'/logs/dev.log',
+            'maxBytes': 1024 * 1024 * 5,  # 5 MB
+            'backupCount': 10,
+            'formatter': 'standard'
+        },
+        'debug_log': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': BASE_DIR+'/logs/dev.log',
+            'maxBytes': 1024 * 1024 * 5,  # 5 MB
+            'backupCount': 10,
+            'formatter': 'standard'
+        }
+    },
+    'loggers': {
+        'debugmess': {
+            'handlers': ['debug_log'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'django.request': {
+            'handlers': ['error_log'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.requests': {
+            'handlers': ['error_log'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django': {
+            'handlers': ['error_log'],
+            'level': 'ERROR',
+            'propagate': False,
+        }
+    }
+}
 
 EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'
 

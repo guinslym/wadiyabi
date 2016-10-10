@@ -49,9 +49,22 @@ BASE_APPS =  (
     'django_extensions',
 )
 THIRD_PARTY_APPS =  (
-    'rest_framework',
-     'crispy_forms',
+    'crispy_forms',
     'bootstrap_pagination',
+    ## Allaouth          # https://django-allauth.readthedocs.io/en/latest/index.html
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.bitbucket',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.google',
+    # DRF
+    'rest_framework',
+    'rest_framework.authtoken',
+    # Django-rest-auth          # https://github.com/Tivix/django-rest-auth
+    'rest_auth',
+    'rest_auth.registration',
 )
 LOCAL_APPS = (
     'applications.delivrem',
@@ -162,10 +175,26 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
 AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
-    'django.contrib.auth.backends.RemoteUserBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+    #'django.contrib.auth.backends.RemoteUserBackend',
 )
 
-LOGIN_REDIRECT_URL = "/"
+
+# Allauth
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
+SOCIALACCOUNT_EMAIL_VERIFICATION = False
+
+# auth and allauth settings
+LOGIN_REDIRECT_URL = '/'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+
+# shell to use with Django-extensions
 SHELL_PLUS = "ipython"
