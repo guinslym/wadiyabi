@@ -8,9 +8,9 @@ App:
       ✔ Home\\index @done(2016-10-09 23:08) @project(App / ☐ Urls)
       ✔ detail/id @done(2016-10-09 23:08) @project(App / ☐ Urls)
   ☐ Create User
-    ☐ Authenticate user
-    ☐ Create login
-    ☐ Create logout
+    ✔ Authenticate user @done(2016-10-10 00:11) @project(App)
+    ✔ Create login @done(2016-10-10 00:11) @project(App)
+    ✔ Create logout @done(2016-10-10 00:11) @project(App)
     ☐ Create Profile
     ☐ Urls:
   ☐ Create Comments

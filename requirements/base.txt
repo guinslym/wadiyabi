@@ -18,6 +18,5 @@ whitenoise
 
 #essaie
 django-rest-auth
-django-filter==0.15.2
 when-changed==0.3.0
 python-dotenv==0.6.0

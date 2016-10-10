@@ -50,6 +50,8 @@ BASE_APPS =  (
 )
 THIRD_PARTY_APPS =  (
     'crispy_forms',
+    #django-friendship   #https://github.com/revsys/django-friendship
+    'friendship',
     'bootstrap_pagination',
     ## Allaouth          # https://django-allauth.readthedocs.io/en/latest/index.html
     'allauth',
@@ -188,7 +190,8 @@ AUTHENTICATION_BACKENDS = (
 # Allauth
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 SOCIALACCOUNT_EMAIL_VERIFICATION = False
 

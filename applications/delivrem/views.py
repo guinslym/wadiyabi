@@ -18,6 +18,9 @@ from .decorators import staff_or_author_required
 
 from django.core.urlresolvers import reverse
 
+from django.contrib.auth.models import User
+from friendship.models import Friend, Follow
+
 from .utils import (
     is_staff,
     SuccessMessageMixin,
