@@ -4,6 +4,9 @@ from django.forms import ModelForm
 from django.utils.translation import ugettext_lazy as _, ugettext
 from crispy_forms.helper import FormHelper
 from crispy_forms import layout, bootstrap
+#from crispy_forms.layout import Layout, Fieldset, Submit, Button
+
+from django.core.urlresolvers import reverse
 
 class ContactForm(forms.Form):
     name = forms.CharField()
@@ -56,6 +59,7 @@ class ProductForm(ModelForm):
             ),
             bootstrap.FormActions(
                 layout.Submit("submit", _("Save")),
+                layout.Button('cancel', 'Cancel', onclick="location.href='%s'" % reverse('delivrem:product-home')),
             )
         )
 
@@ -93,5 +97,6 @@ class ProductEditForm(ModelForm):
             ),
             bootstrap.FormActions(
                 layout.Submit("submit", _("Save")),
+                layout.Button('cancel', 'Cancel', onclick="location.href='%s'" % reverse('delivrem:product-home')),
             )
         )

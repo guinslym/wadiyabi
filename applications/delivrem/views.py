@@ -53,31 +53,28 @@ class ProductListView(ListView):
         return self.request.GET.get('paginate_by', self.paginate_by)
 
 class ProductCreateView(SuccessMessageMixin, CreateView):
-    model = Product
     form_class = ProductForm
-    template_name = '_form.html'
+    template_name = "product_create.html"
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.author = self.request.user
-        self.object.ip = self.request.META['REMOTE_ADDR']
-        return super(self.__class__, self).form_valid(form)
+        return super(ProductCreateView, self).form_valid(form)
 
 product_new = login_required(ProductCreateView.as_view())
 
 class ProductUpdateView(SuccessMessageMixin, UpdateView):
     model = Product
     form_class = ProductEditForm
-    template_name = '_form.html'
+    template_name = "product_update.html"
 
-    @method_decorator(login_required)
-    @method_decorator(staff_or_author_required(Product))
+    #@method_decorator(login_required)
+    #@method_decorator(staff_or_author_required(Product))
     def dispatch(self, *args, **kwargs):
         return super(self.__class__, self).dispatch(self.request, *args, **kwargs)
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
-        self.object.ip = self.request.META['REMOTE_ADDR']
         #migh need to remove that line
         self.object.author = self.request.user
         return super(self.__class__, self).form_valid(form)
@@ -98,6 +95,9 @@ class ProductDetailView(DetailView):
 class ProductDetailView(DetailView):
     template_name = "detail.html"
     model = Product
+    """
+    #TODO the retrun home button doesn't display all the Product list
+    """
 
 
 class  ProductDeleteView(SuccessMessageMixin, DeleteView):
@@ -111,13 +111,15 @@ class  ProductDeleteView(SuccessMessageMixin, DeleteView):
 
     def get_context_data(self, **kwargs):
         context = super(self.__class__, self).get_context_data(**kwargs)
-        context['back_page'] = reverse_lazy('delivrem:index')
+        context['back_page'] = reverse_lazy('delivrem:product-home')
         return context
 
     def get_success_url(self):
-        return reverse_lazy('delivrem:index')
+        return reverse_lazy('delivrem:product-home')
 
 product_delete = ProductDeleteView.as_view()
+
+
 
 class HomeView(TemplateView):
     template_name = 'home.html'

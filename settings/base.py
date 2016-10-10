@@ -57,6 +57,7 @@ LOCAL_APPS = (
     'applications.delivrem',
 )
 
+'''
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
@@ -67,6 +68,7 @@ CACHES = {
         }
     }
 }
+'''
 
 TEMPLATES = [
     {

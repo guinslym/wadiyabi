@@ -39,7 +39,7 @@ class Product(TimeStampedModel):
     def __str__(self):
         return str(self.id)
     def get_absolute_url(self):
-        return reverse('delivrem:detail', args=(self.id,))
+        return reverse('delivrem:product-detail', args=(self.id,))
     class Meta:
         ordering = ["-created"]
     '''
