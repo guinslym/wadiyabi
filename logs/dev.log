@@ -1,0 +1,84 @@
+2016-10-09 23:46:22,450 [ERROR] django.request: Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\allauth\socialaccount\providers\facebook\provider.py", line 129, in media_js
+    app = self.get_app(request)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\allauth\socialaccount\providers\base.py", line 36, in get_app
+    return SocialApp.objects.get_current(self.id)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\allauth\socialaccount\models.py", line 31, in get_current
+    provider=provider)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+allauth.socialaccount.models.DoesNotExist: SocialApp matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\core\handlers\base.py", line 164, in get_response
+    response = response.render()
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\response.py", line 158, in render
+    self.content = self.rendered_content
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\response.py", line 135, in rendered_content
+    content = template.render(context, self._request)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\base.py", line 210, in render
+    return self._render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\test\utils.py", line 96, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\test\utils.py", line 96, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\test\utils.py", line 96, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\defaulttags.py", line 329, in render
+    return nodelist.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return template.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\base.py", line 212, in render
+    return self._render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\test\utils.py", line 96, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\allauth\socialaccount\templatetags\socialaccount.py", line 57, in render
+    for p in providers.registry.get_list()])
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\allauth\socialaccount\templatetags\socialaccount.py", line 57, in <listcomp>
+    for p in providers.registry.get_list()])
+  File "C:\Users\gmond071\AppData\Local\Continuum\Miniconda3\lib\site-packages\allauth\socialaccount\providers\facebook\provider.py", line 131, in media_js
+    raise ImproperlyConfigured("No Facebook app configured: please"
+django.core.exceptions.ImproperlyConfigured: No Facebook app configured: please add a SocialApp using the Django admin
